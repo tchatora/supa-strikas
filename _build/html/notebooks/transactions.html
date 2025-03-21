@@ -1,0 +1,700 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Transactions &#8212; Super Strikers Fantasy Football</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/transactions';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Current Members" href="../docs/current-members.html" />
+    <link rel="prev" title="Content with notebooks" href="notebooks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../docs/intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://www.vecteezy.com/png/13366674-foot-ball-or-soccer-ball-icon-symbol-for-art-illustration-logo-website-apps-pictogram-news-infographic-or-graphic-design-element-format-png" class="logo__image only-light" alt="Super Strikers Fantasy Football - Home"/>
+    <img src="https://www.vecteezy.com/png/13366674-foot-ball-or-soccer-ball-icon-symbol-for-art-illustration-logo-website-apps-pictogram-news-infographic-or-graphic-design-element-format-png" class="logo__image only-dark pst-js-only" alt="Super Strikers Fantasy Football - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../docs/intro.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../docs/about.html">About the Supa Strikas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Current Season</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Past Seasons</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Transactions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Members</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../docs/current-members.html">Current Members</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/past-members.html">Past Members</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/transactions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/transactions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Transactions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="transactions">
+<h1>Transactions<a class="headerlink" href="#transactions" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">altair</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">alt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;~/my-book/data/transactions_2025_03_16.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_claims</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Drop&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">data_claims</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Player</th>
+      <th>Team</th>
+      <th>Position</th>
+      <th>Type</th>
+      <th>Team.1</th>
+      <th>Date (PDT)</th>
+      <th>Gameweek</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Mateo Kovacic</td>
+      <td>MCI</td>
+      <td>M</td>
+      <td>Drop</td>
+      <td>We don't talk about Bruno</td>
+      <td>Sat Mar 15, 2025, 7:46AM</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Malo Gusto</td>
+      <td>CHE</td>
+      <td>D</td>
+      <td>Drop</td>
+      <td>We don't talk about Bruno</td>
+      <td>Sat Mar 15, 2025, 7:45AM</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Eddie Nketiah</td>
+      <td>CRY</td>
+      <td>F</td>
+      <td>Drop</td>
+      <td>Tiki Tak</td>
+      <td>Fri Mar 14, 2025, 10:35PM</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Dean Henderson</td>
+      <td>CRY</td>
+      <td>G</td>
+      <td>Drop</td>
+      <td>Just gimme de Ligt and pass the Rice.</td>
+      <td>Fri Mar 14, 2025, 1:33PM</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Jan Bednarek</td>
+      <td>SOU</td>
+      <td>D</td>
+      <td>Drop</td>
+      <td>Just gimme de Ligt and pass the Rice.</td>
+      <td>Fri Mar 14, 2025, 1:24PM</td>
+      <td>29</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">most_claims</span> <span class="o">=</span> <span class="n">data_claims</span><span class="p">[</span><span class="s1">&#39;Team.1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="c1">#most_claims = most_claims.rename(columns = {&#39;index&#39;:&#39;Name&#39;}).astype(str)</span>
+<span class="n">most_claims</span><span class="p">[</span><span class="s1">&#39;Team.1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">most_claims</span><span class="p">[</span><span class="s1">&#39;Team.1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">most_claims</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">most_claims</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">most_claims</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 9 entries, 0 to 8
+Data columns (total 2 columns):
+ #   Column  Non-Null Count  Dtype 
+---  ------  --------------  ----- 
+ 0   Team.1  9 non-null      object
+ 1   count   9 non-null      int64 
+dtypes: int64(1), object(1)
+memory usage: 276.0+ bytes
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_most</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data_claims</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">500</span>
+                     <span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;count()&#39;</span><span class="p">),</span> 
+    <span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span> <span class="n">sort</span> <span class="o">=</span> <span class="s1">&#39;-x&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">properties</span><span class="p">()</span>
+
+<span class="n">plot_most</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+  #altair-viz-33de0f84aa5b4992b6e4406d2a44eb5f.vega-embed {
+    width: 100%;
+    display: flex;
+  }
+
+  #altair-viz-33de0f84aa5b4992b6e4406d2a44eb5f.vega-embed details,
+  #altair-viz-33de0f84aa5b4992b6e4406d2a44eb5f.vega-embed details summary {
+    position: relative;
+  }
+</style>
+<div id="altair-viz-33de0f84aa5b4992b6e4406d2a44eb5f"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-33de0f84aa5b4992b6e4406d2a44eb5f") {
+      outputDiv = document.getElementById("altair-viz-33de0f84aa5b4992b6e4406d2a44eb5f");
+    }
+
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-bc2b8b79c894095292113ebd921d9fc9"}, "mark": {"type": "bar"}, "encoding": {"x": {"aggregate": "count", "type": "quantitative"}, "y": {"field": "Team", "sort": "-x", "type": "nominal"}}, "height": 300, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-bc2b8b79c894095292113ebd921d9fc9": [{"Player": "Mateo Kovacic", "Team": "MCI", "Position": "M", "Type": "Drop", "Team.1": "We don't talk about Bruno", "Date (PDT)": "Sat Mar 15, 2025, 7:46AM", "Gameweek": 29}, {"Player": "Malo Gusto", "Team": "CHE", "Position": "D", "Type": "Drop", "Team.1": "We don't talk about Bruno", "Date (PDT)": "Sat Mar 15, 2025, 7:45AM", "Gameweek": 29}, {"Player": "Eddie Nketiah", "Team": "CRY", "Position": "F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Mar 14, 2025, 10:35PM", "Gameweek": 29}, {"Player": "Dean Henderson", "Team": "CRY", "Position": "G", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Mar 14, 2025, 1:33PM", "Gameweek": 29}, {"Player": "Jan Bednarek", "Team": "SOU", "Position": "D", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Mar 14, 2025, 1:24PM", "Gameweek": 29}, {"Player": "Jacob Murphy", "Team": "NEW", "Position": "M", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Mar 14, 2025, 12:22PM", "Gameweek": 29}, {"Player": "Jarrad Branthwaite", "Team": "EVE", "Position": "D", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Mar 14, 2025, 9:00AM", "Gameweek": 29}, {"Player": "Manuel Akanji", "Team": "MCI", "Position": "D", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Fri Mar 14, 2025, 9:00AM", "Gameweek": 29}, {"Player": "Jorgen Strand Larsen", "Team": "WOL", "Position": "F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Sat Mar 8, 2025, 3:10AM", "Gameweek": 28}, {"Player": "Reece James", "Team": "CHE", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Sat Mar 8, 2025, 3:10AM", "Gameweek": 28}, {"Player": "Dean Huijsen", "Team": "BOU", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Sat Mar 8, 2025, 3:07AM", "Gameweek": 28}, {"Player": "Dwight McNeil", "Team": "EVE", "Position": "M,F", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Sat Mar 8, 2025, 12:00AM", "Gameweek": 28}, {"Player": "Eddie Nketiah", "Team": "CRY", "Position": "F", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Mar 7, 2025, 10:59PM", "Gameweek": 28}, {"Player": "Lewis Hall", "Team": "NEW", "Position": "D,M", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Mar 7, 2025, 10:56PM", "Gameweek": 28}, {"Player": "Carlos Alcaraz", "Team": "EVE", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Mar 7, 2025, 1:09PM", "Gameweek": 28}, {"Player": "Vitalii Mykolenko", "Team": "EVE", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Wed Mar 5, 2025, 3:07PM", "Gameweek": 28}, {"Player": "Raul Jimenez", "Team": "FUL", "Position": "F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Wed Mar 5, 2025, 3:05PM", "Gameweek": 28}, {"Player": "Liam Delap", "Team": "IPS", "Position": "F", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Sat Mar 1, 2025, 6:07AM", "Gameweek": 28}, {"Player": "Donyell Malen", "Team": "AVL", "Position": "F", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Sat Mar 1, 2025, 6:06AM", "Gameweek": 28}, {"Player": "Ryan Gravenberch", "Team": "LIV", "Position": "M", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Feb 28, 2025, 9:00AM", "Gameweek": 28}, {"Player": "Moises Caicedo", "Team": "CHE", "Position": "M", "Type": "Drop", "Team.1": "We don't talk about Bruno", "Date (PDT)": "Fri Feb 28, 2025, 9:00AM", "Gameweek": 28}, {"Player": "Amad Diallo", "Team": "MUN", "Position": "M,F", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Sat Feb 22, 2025, 9:00AM", "Gameweek": 27}, {"Player": "Dean Henderson", "Team": "CRY", "Position": "G", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Feb 21, 2025, 11:49AM", "Gameweek": 26}, {"Player": "Taylor Harwood-Bellis", "Team": "SOU", "Position": "D", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Feb 21, 2025, 11:21AM", "Gameweek": 26}, {"Player": "Kai Havertz", "Team": "ARS", "Position": "M,F", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Feb 21, 2025, 9:24AM", "Gameweek": 26}, {"Player": "Martin Dubravka", "Team": "NEW", "Position": "G", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Feb 21, 2025, 9:23AM", "Gameweek": 26}, {"Player": "Enzo Fernandez", "Team": "CHE", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Feb 21, 2025, 9:20AM", "Gameweek": 26}, {"Player": "Mateo Kovacic", "Team": "MCI", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Feb 21, 2025, 9:19AM", "Gameweek": 26}, {"Player": "Julio Enciso", "Team": "IPS", "Position": "M,F", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Feb 21, 2025, 9:00AM", "Gameweek": 26}, {"Player": "Leif Davis", "Team": "IPS", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Feb 21, 2025, 9:00AM", "Gameweek": 26}, {"Player": "Richarlison", "Team": "TOT", "Position": "F", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Fri Feb 21, 2025, 9:00AM", "Gameweek": 26}, {"Player": "Reece James", "Team": "CHE", "Position": "D", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Feb 21, 2025, 9:00AM", "Gameweek": 26}, {"Player": "Abdul Fatawu", "Team": "LEI", "Position": "M,F", "Type": "Drop", "Team.1": "Jared", "Date (PDT)": "Fri Feb 21, 2025, 9:00AM", "Gameweek": 26}, {"Player": "Jacob Ramsey", "Team": "AVL", "Position": "M", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Feb 21, 2025, 9:00AM", "Gameweek": 26}, {"Player": "Danny Welbeck", "Team": "BHA", "Position": "F", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Feb 21, 2025, 9:00AM", "Gameweek": 26}, {"Player": "Mikel Merino", "Team": "ARS", "Position": "M", "Type": "Drop", "Team.1": "Jared", "Date (PDT)": "Fri Feb 21, 2025, 10:55AM", "Gameweek": 26}, {"Player": "Abdul Fatawu", "Team": "LEI", "Position": "M,F", "Type": "Drop", "Team.1": "Jared", "Date (PDT)": "Sat Feb 15, 2025, 3:05PM", "Gameweek": 26}, {"Player": "Jamie Vardy", "Team": "LEI", "Position": "F", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Feb 14, 2025, 11:46AM", "Gameweek": 25}, {"Player": "Lisandro Martinez", "Team": "MUN", "Position": "D", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Feb 14, 2025, 11:44AM", "Gameweek": 25}, {"Player": "Jorgen Strand Larsen", "Team": "WOL", "Position": "F", "Type": "Drop", "Team.1": "Jared", "Date (PDT)": "Fri Feb 14, 2025, 11:38AM", "Gameweek": 25}, {"Player": "Harry Wilson", "Team": "FUL", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Tue Feb 11, 2025, 11:34AM", "Gameweek": 25}, {"Player": "Idrissa Gueye", "Team": "EVE", "Position": "M", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Sun Feb 9, 2025, 9:26PM", "Gameweek": 25}, {"Player": "Fabian Schar", "Team": "NEW", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Sun Feb 9, 2025, 6:12PM", "Gameweek": 25}, {"Player": "Matthijs de Ligt", "Team": "MUN", "Position": "D", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Sun Feb 9, 2025, 10:35AM", "Gameweek": 25}, {"Player": "Dean Huijsen", "Team": "BOU", "Position": "D", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Sat Feb 8, 2025, 6:45AM", "Gameweek": 25}, {"Player": "Keane Lewis-Potter", "Team": "BRF", "Position": "F", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Sat Feb 8, 2025, 6:43AM", "Gameweek": 25}, {"Player": "Jarrad Branthwaite", "Team": "EVE", "Position": "D", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Sat Feb 8, 2025, 6:37AM", "Gameweek": 25}, {"Player": "Tyrick Mitchell", "Team": "CRY", "Position": "D", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Jan 31, 2025, 12:58PM", "Gameweek": 24}, {"Player": "Jadon Sancho", "Team": "CHE", "Position": "M,F", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Jan 31, 2025, 9:35AM", "Gameweek": 24}, {"Player": "Tomas Soucek", "Team": "WHU", "Position": "M", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Fri Jan 31, 2025, 9:00AM", "Gameweek": 24}, {"Player": "Jaden Philogene-Bidace", "Team": "IPS", "Position": "F", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Jan 31, 2025, 9:00AM", "Gameweek": 24}, {"Player": "Joelinton", "Team": "NEW", "Position": "F", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Sat Jan 25, 2025, 9:00AM", "Gameweek": 24}, {"Player": "Kamaldeen Sulemana", "Team": "SOU", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Sat Jan 25, 2025, 9:00AM", "Gameweek": 24}, {"Player": "Marc Cucurella", "Team": "CHE", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Sat Jan 25, 2025, 5:53AM", "Gameweek": 23}, {"Player": "Solly March", "Team": "BHA", "Position": "M", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Sat Jan 25, 2025, 5:45AM", "Gameweek": 23}, {"Player": "Noussair Mazraoui", "Team": "MUN", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Sat Jan 25, 2025, 5:43AM", "Gameweek": 23}, {"Player": "Dominic Solanke", "Team": "TOT", "Position": "F", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Fri Jan 24, 2025, 1:52PM", "Gameweek": 23}, {"Player": "Jeremy Doku", "Team": "MCI", "Position": "M,F", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Jan 24, 2025, 9:00AM", "Gameweek": 23}, {"Player": "Diogo Dalot", "Team": "MUN", "Position": "D", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Sat Jan 18, 2025, 3:27AM", "Gameweek": 22}, {"Player": "Gabriel Jesus", "Team": "ARS", "Position": "F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Jan 17, 2025, 2:00PM", "Gameweek": 22}, {"Player": "Leny Yoro", "Team": "MUN", "Position": "D", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Jan 17, 2025, 10:30AM", "Gameweek": 22}, {"Player": "Lukasz Fabianski", "Team": "WHU", "Position": "G", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Jan 17, 2025, 9:05AM", "Gameweek": 22}, {"Player": "Nikola Milenkovic", "Team": "NOT", "Position": "D", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Jan 17, 2025, 9:00AM", "Gameweek": 22}, {"Player": "Curtis Jones", "Team": "LIV", "Position": "M", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Jan 17, 2025, 9:00AM", "Gameweek": 22}, {"Player": "Christian Norgaard", "Team": "BRF", "Position": "M", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Tue Jan 14, 2025, 10:40AM", "Gameweek": 21}, {"Player": "Kepa", "Team": "BOU", "Position": "G", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Tue Jan 14, 2025, 10:38AM", "Gameweek": 21}, {"Player": "Omari Hutchinson", "Team": "IPS", "Position": "M,F", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Mon Jan 13, 2025, 11:56AM", "Gameweek": 21}, {"Player": "Dominik Szoboszlai", "Team": "LIV", "Position": "M", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Jan 10, 2025, 1:23PM", "Gameweek": 21}, {"Player": "Facundo Buonanotte", "Team": "LEI", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Jan 10, 2025, 12:34PM", "Gameweek": 21}, {"Player": "Victor Kristiansen", "Team": "LEI", "Position": "D", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Jan 10, 2025, 12:34PM", "Gameweek": 21}, {"Player": "Mark Flekken", "Team": "BRF", "Position": "G", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Jan 10, 2025, 9:00AM", "Gameweek": 21}, {"Player": "Danny Welbeck", "Team": "BHA", "Position": "F", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Fri Jan 10, 2025, 9:00AM", "Gameweek": 21}, {"Player": "Francisco Evanilson de Lima Barbosa", "Team": "BOU", "Position": "F", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Jan 10, 2025, 9:00AM", "Gameweek": 21}, {"Player": "Adam Wharton", "Team": "CRY", "Position": "M", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Sat Jan 4, 2025, 4:08AM", "Gameweek": 20}, {"Player": "Ashley Young", "Team": "EVE", "Position": "D", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Jan 3, 2025, 6:23PM", "Gameweek": 20}, {"Player": "Marcus Rashford", "Team": "AVL", "Position": "M,F", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Jan 3, 2025, 5:30PM", "Gameweek": 20}, {"Player": "Robert Sanchez", "Team": "CHE", "Position": "G", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Jan 3, 2025, 3:17PM", "Gameweek": 20}, {"Player": "Harvey Barnes", "Team": "NEW", "Position": "M", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Jan 3, 2025, 3:13PM", "Gameweek": 20}, {"Player": "Noussair Mazraoui", "Team": "MUN", "Position": "D", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Jan 3, 2025, 3:01PM", "Gameweek": 20}, {"Player": "Jarrod Bowen", "Team": "WHU", "Position": "M,F", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Jan 3, 2025, 1:39PM", "Gameweek": 20}, {"Player": "Tyrick Mitchell", "Team": "CRY", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Jan 3, 2025, 1:31PM", "Gameweek": 20}, {"Player": "Joseph Gomez", "Team": "LIV", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Jan 3, 2025, 1:30PM", "Gameweek": 20}, {"Player": "Rasmus Hojlund", "Team": "MUN", "Position": "F", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Fri Jan 3, 2025, 12:36PM", "Gameweek": 20}, {"Player": "Adam Armstrong", "Team": "SOU", "Position": "F", "Type": "Drop", "Team.1": "Jared", "Date (PDT)": "Fri Jan 3, 2025, 9:00AM", "Gameweek": 20}, {"Player": "Aaron Wan-Bissaka", "Team": "WHU", "Position": "D", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Sun Dec 29, 2024, 6:14AM", "Gameweek": 19}, {"Player": "Francisco Evanilson de Lima Barbosa", "Team": "BOU", "Position": "F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Sat Dec 28, 2024, 8:03PM", "Gameweek": 19}, {"Player": "Djed Spence", "Team": "TOT", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Sat Dec 28, 2024, 10:26AM", "Gameweek": 19}, {"Player": "Lewis Dunk", "Team": "BHA", "Position": "D", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Sat Dec 28, 2024, 10:18AM", "Gameweek": 19}, {"Player": "Mario Lemina", "Team": "WOL", "Position": "M", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Thu Dec 26, 2024, 3:38AM", "Gameweek": 18}, {"Player": "Lucas Paqueta", "Team": "WHU", "Position": "M", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Tue Dec 24, 2024, 3:34PM", "Gameweek": 18}, {"Player": "Mason Mount", "Team": "MUN", "Position": "M", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Tue Dec 24, 2024, 3:33PM", "Gameweek": 18}, {"Player": "Wout Faes", "Team": "LEI", "Position": "D", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Tue Dec 24, 2024, 2:20PM", "Gameweek": 18}, {"Player": "Fraser Forster", "Team": "TOT", "Position": "G", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Tue Dec 24, 2024, 12:39PM", "Gameweek": 18}, {"Player": "Matty Cash", "Team": "AVL", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Mon Dec 23, 2024, 1:46PM", "Gameweek": 18}, {"Player": "Savio", "Team": "MCI", "Position": "M,F", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Mon Dec 23, 2024, 1:44PM", "Gameweek": 18}, {"Player": "Marcus Rashford", "Team": "AVL", "Position": "M,F", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Mon Dec 23, 2024, 1:43PM", "Gameweek": 18}, {"Player": "Ibrahima Konate", "Team": "LIV", "Position": "D", "Type": "Drop", "Team.1": "We don't talk about Bruno", "Date (PDT)": "Mon Dec 23, 2024, 9:00AM", "Gameweek": 18}, {"Player": "Jorgen Strand Larsen", "Team": "WOL", "Position": "F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Mon Dec 23, 2024, 9:00AM", "Gameweek": 18}, {"Player": "Lucas Digne", "Team": "AVL", "Position": "D", "Type": "Drop", "Team.1": "We don't talk about Bruno", "Date (PDT)": "Mon Dec 23, 2024, 9:00AM", "Gameweek": 18}, {"Player": "Liam Delap", "Team": "IPS", "Position": "F", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Dec 20, 2024, 10:17PM", "Gameweek": 17}, {"Player": "Ruben Dias", "Team": "MCI", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Dec 20, 2024, 7:50PM", "Gameweek": 17}, {"Player": "Pervis Estupinan", "Team": "BHA", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Dec 20, 2024, 3:38PM", "Gameweek": 17}, {"Player": "Kevin Schade", "Team": "BRF", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Dec 20, 2024, 3:03PM", "Gameweek": 17}, {"Player": "Bilal El Khannouss", "Team": "LEI", "Position": "M", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Dec 20, 2024, 2:40PM", "Gameweek": 17}, {"Player": "Marcus Tavernier", "Team": "BOU", "Position": "M", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Dec 20, 2024, 9:03AM", "Gameweek": 17}, {"Player": "Nick Pope", "Team": "NEW", "Position": "G", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Dec 20, 2024, 9:00AM", "Gameweek": 17}, {"Player": "Mark Flekken", "Team": "BRF", "Position": "G", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Sat Dec 14, 2024, 5:15AM", "Gameweek": 16}, {"Player": "Riccardo Calafiori", "Team": "ARS", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Dec 13, 2024, 6:42PM", "Gameweek": 16}, {"Player": "Casemiro", "Team": "MUN", "Position": "M", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Dec 13, 2024, 2:29PM", "Gameweek": 16}, {"Player": "Caoimhin Kelleher", "Team": "LIV", "Position": "G", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Dec 13, 2024, 2:16PM", "Gameweek": 16}, {"Player": "Bart Verbruggen", "Team": "BHA", "Position": "G", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Dec 13, 2024, 11:10AM", "Gameweek": 16}, {"Player": "Moises Caicedo", "Team": "CHE", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Dec 13, 2024, 11:04AM", "Gameweek": 16}, {"Player": "Tariq Lamptey", "Team": "BHA", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Dec 6, 2024, 10:07AM", "Gameweek": 15}, {"Player": "Luke Shaw", "Team": "MUN", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Dec 6, 2024, 10:05AM", "Gameweek": 15}, {"Player": "Dara O'Shea", "Team": "IPS", "Position": "D", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Dec 6, 2024, 9:00AM", "Gameweek": 15}, {"Player": "Leif Davis", "Team": "IPS", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Dec 6, 2024, 9:00AM", "Gameweek": 15}, {"Player": "Omari Hutchinson", "Team": "IPS", "Position": "M,F", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Mon Dec 2, 2024, 4:56PM", "Gameweek": 14}, {"Player": "Alex Moreno", "Team": "NOT", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Mon Dec 2, 2024, 4:53PM", "Gameweek": 14}, {"Player": "Jhon Duran", "Team": "AVL", "Position": "F", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Mon Dec 2, 2024, 12:06PM", "Gameweek": 14}, {"Player": "Caleb Okoli", "Team": "LEI", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Mon Dec 2, 2024, 10:59AM", "Gameweek": 14}, {"Player": "Matt O'Riley", "Team": "BHA", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Mon Dec 2, 2024, 9:00AM", "Gameweek": 14}, {"Player": "Pervis Estupinan", "Team": "BHA", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Mon Dec 2, 2024, 9:00AM", "Gameweek": 14}, {"Player": "Mikel Merino", "Team": "ARS", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Mon Dec 2, 2024, 9:00AM", "Gameweek": 14}, {"Player": "Georginio Rutter", "Team": "BHA", "Position": "M", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Mon Dec 2, 2024, 9:00AM", "Gameweek": 14}, {"Player": "Marc Cucurella", "Team": "CHE", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Nov 29, 2024, 11:11AM", "Gameweek": 13}, {"Player": "Reece James", "Team": "CHE", "Position": "D", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Nov 29, 2024, 11:00AM", "Gameweek": 13}, {"Player": "Adama Traore", "Team": "FUL", "Position": "F", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Nov 29, 2024, 10:55AM", "Gameweek": 13}, {"Player": "Rayan Ait-Nouri", "Team": "WOL", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Nov 29, 2024, 10:34AM", "Gameweek": 13}, {"Player": "Micky van de Ven", "Team": "TOT", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Nov 29, 2024, 10:29AM", "Gameweek": 13}, {"Player": "Leny Yoro", "Team": "MUN", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Nov 29, 2024, 10:28AM", "Gameweek": 13}, {"Player": "Joshua Zirkzee", "Team": "MUN", "Position": "F", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Nov 29, 2024, 9:02AM", "Gameweek": 13}, {"Player": "Wilfred Ndidi", "Team": "LEI", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Nov 29, 2024, 9:00AM", "Gameweek": 13}, {"Player": "Lucas Paqueta", "Team": "WHU", "Position": "M", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Fri Nov 29, 2024, 9:00AM", "Gameweek": 13}, {"Player": "Mateo Kovacic", "Team": "MCI", "Position": "M", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Nov 29, 2024, 9:00AM", "Gameweek": 13}, {"Player": "Carlos Baleba", "Team": "BHA", "Position": "M", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Nov 29, 2024, 9:00AM", "Gameweek": 13}, {"Player": "Ezri Konsa", "Team": "AVL", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Nov 22, 2024, 8:29AM", "Gameweek": 12}, {"Player": "Matheus Nunes", "Team": "MCI", "Position": "M", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Thu Nov 21, 2024, 9:18PM", "Gameweek": 12}, {"Player": "Konstantinos Mavropanos", "Team": "WHU", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Tue Nov 19, 2024, 10:48PM", "Gameweek": 12}, {"Player": "Jorgen Strand Larsen", "Team": "WOL", "Position": "F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Tue Nov 19, 2024, 8:15AM", "Gameweek": 12}, {"Player": "Ben White", "Team": "ARS", "Position": "D", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Tue Nov 19, 2024, 7:49AM", "Gameweek": 12}, {"Player": "Elliot Anderson", "Team": "NOT", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Nov 15, 2024, 9:00AM", "Gameweek": 12}, {"Player": "Guglielmo Vicario", "Team": "TOT", "Position": "G", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Fri Nov 15, 2024, 9:00AM", "Gameweek": 12}, {"Player": "Ezri Konsa", "Team": "AVL", "Position": "D", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Nov 8, 2024, 11:35AM", "Gameweek": 11}, {"Player": "Stephy Mavididi", "Team": "LEI", "Position": "M,F", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Nov 8, 2024, 10:34AM", "Gameweek": 11}, {"Player": "Marc Cucurella", "Team": "CHE", "Position": "D", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Nov 8, 2024, 9:00AM", "Gameweek": 11}, {"Player": "Mads Hermansen", "Team": "LEI", "Position": "G", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Nov 1, 2024, 12:20PM", "Gameweek": 10}, {"Player": "Yankuba Minteh", "Team": "BHA", "Position": "M,F", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Nov 1, 2024, 10:01AM", "Gameweek": 10}, {"Player": "Riccardo Calafiori", "Team": "ARS", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Nov 1, 2024, 9:00AM", "Gameweek": 10}, {"Player": "Francisco Evanilson de Lima Barbosa", "Team": "BOU", "Position": "F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Nov 1, 2024, 9:00AM", "Gameweek": 10}, {"Player": "Alexis Mac Allister", "Team": "LIV", "Position": "M", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Nov 1, 2024, 9:00AM", "Gameweek": 10}, {"Player": "Liam Delap", "Team": "IPS", "Position": "F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Nov 1, 2024, 9:00AM", "Gameweek": 10}, {"Player": "Kobbie Mainoo", "Team": "MUN", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Nov 1, 2024, 9:00AM", "Gameweek": 10}, {"Player": "Tyrick Mitchell", "Team": "CRY", "Position": "D", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Nov 1, 2024, 9:00AM", "Gameweek": 10}, {"Player": "Enzo Fernandez", "Team": "CHE", "Position": "M", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Nov 1, 2024, 9:00AM", "Gameweek": 10}, {"Player": "Eddie Nketiah", "Team": "CRY", "Position": "F", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Oct 18, 2024, 12:24PM", "Gameweek": 8}, {"Player": "Jack Hinshelwood", "Team": "BHA", "Position": "M", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Oct 18, 2024, 7:50AM", "Gameweek": 8}, {"Player": "Destiny Udogie", "Team": "TOT", "Position": "D", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Oct 18, 2024, 7:47AM", "Gameweek": 8}, {"Player": "Manuel Ugarte", "Team": "MUN", "Position": "M", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Thu Oct 17, 2024, 1:50PM", "Gameweek": 8}, {"Player": "Yukinari Sugawara", "Team": "SOU", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Thu Oct 17, 2024, 1:23PM", "Gameweek": 8}, {"Player": "Harvey Barnes", "Team": "NEW", "Position": "M", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Thu Oct 17, 2024, 11:53AM", "Gameweek": 8}, {"Player": "Kepa", "Team": "BOU", "Position": "G", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Mon Oct 14, 2024, 11:59PM", "Gameweek": 8}, {"Player": "Jadon Sancho", "Team": "CHE", "Position": "M,F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Oct 11, 2024, 9:00AM", "Gameweek": 8}, {"Player": "Jorgen Strand Larsen", "Team": "WOL", "Position": "F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Oct 11, 2024, 9:00AM", "Gameweek": 8}, {"Player": "James Ward-Prowse", "Team": "WHU", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Oct 11, 2024, 9:00AM", "Gameweek": 8}, {"Player": "Joelinton", "Team": "NEW", "Position": "F", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Oct 4, 2024, 9:26AM", "Gameweek": 7}, {"Player": "Federico Chiesa", "Team": "LIV", "Position": "M,F", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Oct 4, 2024, 9:23AM", "Gameweek": 7}, {"Player": "James Tarkowski", "Team": "EVE", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Oct 4, 2024, 9:11AM", "Gameweek": 7}, {"Player": "Jean-Philippe Mateta", "Team": "CRY", "Position": "F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Oct 4, 2024, 9:00AM", "Gameweek": 7}, {"Player": "Daniel Munoz", "Team": "CRY", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Oct 4, 2024, 9:00AM", "Gameweek": 7}, {"Player": "Dean Henderson", "Team": "CRY", "Position": "G", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Fri Oct 4, 2024, 9:00AM", "Gameweek": 7}, {"Player": "Francisco Evanilson de Lima Barbosa", "Team": "BOU", "Position": "F", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Sep 27, 2024, 11:34AM", "Gameweek": 6}, {"Player": "Yves Bissouma", "Team": "TOT", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Sep 27, 2024, 10:16AM", "Gameweek": 6}, {"Player": "Simon Adingra", "Team": "BHA", "Position": "M,F", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Sep 27, 2024, 10:16AM", "Gameweek": 6}, {"Player": "Valentino Livramento", "Team": "NEW", "Position": "D", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Sep 27, 2024, 9:25AM", "Gameweek": 6}, {"Player": "Bernd Leno", "Team": "FUL", "Position": "G", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Sep 27, 2024, 9:23AM", "Gameweek": 6}, {"Player": "James Ward-Prowse", "Team": "WHU", "Position": "M", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Sep 27, 2024, 9:03AM", "Gameweek": 6}, {"Player": "Jacob Greaves", "Team": "IPS", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Sep 27, 2024, 9:00AM", "Gameweek": 6}, {"Player": "Rodri", "Team": "MCI", "Position": "M", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Sep 27, 2024, 9:00AM", "Gameweek": 6}, {"Player": "Jamie Vardy", "Team": "LEI", "Position": "F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Sep 27, 2024, 9:00AM", "Gameweek": 6}, {"Player": "Mikel Merino", "Team": "ARS", "Position": "M", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Sep 20, 2024, 9:55PM", "Gameweek": 5}, {"Player": "Ruben Dias", "Team": "MCI", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Sep 20, 2024, 9:53PM", "Gameweek": 5}, {"Player": "Leon Bailey", "Team": "AVL", "Position": "M", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Sep 20, 2024, 9:30AM", "Gameweek": 5}, {"Player": "Omari Hutchinson", "Team": "IPS", "Position": "M,F", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Sep 20, 2024, 9:24AM", "Gameweek": 5}, {"Player": "Daniel Munoz", "Team": "CRY", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Sep 20, 2024, 9:02AM", "Gameweek": 5}, {"Player": "Yoane Wissa", "Team": "BRF", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Sep 20, 2024, 9:00AM", "Gameweek": 5}, {"Player": "Rodrigo Muniz", "Team": "FUL", "Position": "F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Sep 20, 2024, 9:00AM", "Gameweek": 5}, {"Player": "Guglielmo Vicario", "Team": "TOT", "Position": "G", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Sep 20, 2024, 9:00AM", "Gameweek": 5}, {"Player": "Neco Williams", "Team": "NOT", "Position": "D", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Sep 20, 2024, 9:00AM", "Gameweek": 5}, {"Player": "Pedro Neto", "Team": "CHE", "Position": "M", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Sep 20, 2024, 9:00AM", "Gameweek": 5}, {"Player": "Ian Maatsen", "Team": "AVL", "Position": "D", "Type": "Drop", "Team.1": "We don't talk about Bruno", "Date (PDT)": "Fri Sep 20, 2024, 9:00AM", "Gameweek": 5}, {"Player": "Riccardo Calafiori", "Team": "ARS", "Position": "D", "Type": "Drop", "Team.1": "We don't talk about Bruno", "Date (PDT)": "Sat Sep 14, 2024, 3:37AM", "Gameweek": 4}, {"Player": "Niclas F\u00fcllkrug", "Team": "WHU", "Position": "F", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Sep 13, 2024, 10:51PM", "Gameweek": 4}, {"Player": "Christopher Nkunku", "Team": "CHE", "Position": "M,F", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Sep 13, 2024, 9:44PM", "Gameweek": 4}, {"Player": "Jo\u00e3o F\u00e9lix", "Team": "CHE", "Position": "M,F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Sep 13, 2024, 8:57PM", "Gameweek": 4}, {"Player": "Joachim Andersen", "Team": "FUL", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Sep 13, 2024, 8:52PM", "Gameweek": 4}, {"Player": "Kyle Walker", "Team": "MCI", "Position": "D", "Type": "Drop", "Team.1": "Jared", "Date (PDT)": "Fri Sep 13, 2024, 1:40PM", "Gameweek": 4}, {"Player": "Jordan Pickford", "Team": "EVE", "Position": "G", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Tue Sep 10, 2024, 2:59PM", "Gameweek": 4}, {"Player": "Daniel Munoz", "Team": "CRY", "Position": "D", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Sep 6, 2024, 11:07PM", "Gameweek": 4}, {"Player": "Willy Boly", "Team": "NOT", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Sep 6, 2024, 2:22PM", "Gameweek": 4}, {"Player": "Gabriel Martinelli", "Team": "ARS", "Position": "M,F", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Sep 6, 2024, 2:20PM", "Gameweek": 4}, {"Player": "Ethan Pinnock", "Team": "BRF", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Sep 6, 2024, 9:36AM", "Gameweek": 4}, {"Player": "Alphonse Areola", "Team": "WHU", "Position": "G", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Fri Sep 6, 2024, 9:00AM", "Gameweek": 4}, {"Player": "Neto", "Team": "ARS", "Position": "G", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Sat Aug 31, 2024, 2:38AM", "Gameweek": 3}, {"Player": "Aaron Wan-Bissaka", "Team": "WHU", "Position": "D", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Aug 30, 2024, 4:07PM", "Gameweek": 3}, {"Player": "Mateo Kovacic", "Team": "MCI", "Position": "M", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Aug 30, 2024, 4:06PM", "Gameweek": 3}, {"Player": "Dominic Calvert-Lewin", "Team": "EVE", "Position": "F", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Aug 30, 2024, 4:05PM", "Gameweek": 3}, {"Player": "Marc Guiu", "Team": "CHE", "Position": "F", "Type": "Drop", "Team.1": "We don't talk about Bruno", "Date (PDT)": "Fri Aug 30, 2024, 9:48AM", "Gameweek": 3}, {"Player": "Mason Mount", "Team": "MUN", "Position": "M", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Aug 30, 2024, 9:05AM", "Gameweek": 3}, {"Player": "Mads Hermansen", "Team": "LEI", "Position": "G", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Aug 30, 2024, 9:04AM", "Gameweek": 3}, {"Player": "Fabian Schar", "Team": "NEW", "Position": "D", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Aug 30, 2024, 9:03AM", "Gameweek": 3}, {"Player": "Valentino Livramento", "Team": "NEW", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Aug 30, 2024, 9:00AM", "Gameweek": 3}, {"Player": "Mark Flekken", "Team": "BRF", "Position": "G", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Fri Aug 30, 2024, 9:00AM", "Gameweek": 3}, {"Player": "Jacob Murphy", "Team": "NEW", "Position": "M", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Aug 30, 2024, 9:00AM", "Gameweek": 3}, {"Player": "Ben Brereton", "Team": "SOU", "Position": "F", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Aug 30, 2024, 9:00AM", "Gameweek": 3}, {"Player": "Jamie Vardy", "Team": "LEI", "Position": "F", "Type": "Drop", "Team.1": "Jared", "Date (PDT)": "Fri Aug 30, 2024, 9:00AM", "Gameweek": 3}, {"Player": "Harvey Elliott", "Team": "LIV", "Position": "M", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Fri Aug 30, 2024, 9:00AM", "Gameweek": 3}, {"Player": "Daichi Kamada", "Team": "CRY", "Position": "M", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Aug 30, 2024, 9:00AM", "Gameweek": 3}, {"Player": "Ismaila Sarr", "Team": "CRY", "Position": "F", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Aug 23, 2024, 7:46PM", "Gameweek": 2}, {"Player": "Stephy Mavididi", "Team": "LEI", "Position": "M,F", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Aug 23, 2024, 7:44PM", "Gameweek": 2}, {"Player": "Kieran Trippier", "Team": "NEW", "Position": "D", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Fri Aug 23, 2024, 7:43PM", "Gameweek": 2}, {"Player": "Luke Shaw", "Team": "MUN", "Position": "D", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Aug 23, 2024, 1:07PM", "Gameweek": 2}, {"Player": "Reece James", "Team": "CHE", "Position": "D", "Type": "Drop", "Team.1": "We don't talk about Bruno", "Date (PDT)": "Fri Aug 23, 2024, 11:50AM", "Gameweek": 2}, {"Player": "Solly March", "Team": "BHA", "Position": "M", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Aug 23, 2024, 9:57AM", "Gameweek": 2}, {"Player": "Alphonse Areola", "Team": "WHU", "Position": "G", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Aug 23, 2024, 9:04AM", "Gameweek": 2}, {"Player": "Ivan Toney", "Team": "BRF", "Position": "F", "Type": "Drop", "Team.1": "Jared", "Date (PDT)": "Fri Aug 23, 2024, 9:03AM", "Gameweek": 2}, {"Player": "Dan Burn", "Team": "NEW", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Aug 23, 2024, 9:02AM", "Gameweek": 2}, {"Player": "Leif Davis", "Team": "IPS", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Aug 23, 2024, 9:02AM", "Gameweek": 2}, {"Player": "Valentin Barco", "Team": "BHA", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Aug 23, 2024, 9:02AM", "Gameweek": 2}, {"Player": "Leandro Trossard", "Team": "ARS", "Position": "M,F", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Aug 23, 2024, 9:00AM", "Gameweek": 2}, {"Player": "Joachim Andersen", "Team": "FUL", "Position": "D", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Aug 23, 2024, 9:00AM", "Gameweek": 2}, {"Player": "Callum Wilson", "Team": "NEW", "Position": "F", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Aug 23, 2024, 9:00AM", "Gameweek": 2}, {"Player": "Calvin Bassey", "Team": "FUL", "Position": "D", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Aug 23, 2024, 9:00AM", "Gameweek": 2}, {"Player": "Morgan Gibbs-White", "Team": "NOT", "Position": "M", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Fri Aug 23, 2024, 9:00AM", "Gameweek": 2}, {"Player": "Raheem Sterling", "Team": "ARS", "Position": "M,F", "Type": "Drop", "Team.1": "Jared", "Date (PDT)": "Fri Aug 23, 2024, 9:00AM", "Gameweek": 2}, {"Player": "Gabriel Jesus", "Team": "ARS", "Position": "F", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Fri Aug 23, 2024, 9:00AM", "Gameweek": 2}, {"Player": "Jose Sa", "Team": "WOL", "Position": "G", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Aug 16, 2024, 11:28AM", "Gameweek": 1}, {"Player": "Conor Gallagher", "Team": "CHE", "Position": "M", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Fri Aug 16, 2024, 9:01AM", "Gameweek": 1}, {"Player": "Timo Werner", "Team": "TOT", "Position": "F", "Type": "Drop", "Team.1": "Just gimme de Ligt and pass the Rice.", "Date (PDT)": "Fri Aug 16, 2024, 9:00AM", "Gameweek": 1}, {"Player": "Niclas F\u00fcllkrug", "Team": "WHU", "Position": "F", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Aug 16, 2024, 8:36AM", "Gameweek": 1}, {"Player": "Antonee Robinson", "Team": "FUL", "Position": "D", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Thu Aug 15, 2024, 4:43AM", "Gameweek": 1}, {"Player": "Jack Grealish", "Team": "MCI", "Position": "M", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Tue Aug 13, 2024, 8:25PM", "Gameweek": 1}, {"Player": "John Stones", "Team": "MCI", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Tue Aug 13, 2024, 8:24PM", "Gameweek": 1}, {"Player": "Pervis Estupinan", "Team": "BHA", "Position": "D", "Type": "Drop", "Team.1": "That's Amorim!", "Date (PDT)": "Tue Aug 13, 2024, 1:39PM", "Gameweek": 1}, {"Player": "Jarrad Branthwaite", "Team": "EVE", "Position": "D", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Tue Aug 13, 2024, 2:34AM", "Gameweek": 1}, {"Player": "Julian Alvarez", "Team": "MCI", "Position": "F", "Type": "Drop", "Team.1": "Zirkish De Ligt", "Date (PDT)": "Mon Aug 12, 2024, 8:17PM", "Gameweek": 1}, {"Player": "Julio Enciso", "Team": "IPS", "Position": "M,F", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Sat Aug 10, 2024, 11:10AM", "Gameweek": 1}, {"Player": "Oscar Bobb", "Team": "MCI", "Position": "M", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Fri Aug 9, 2024, 10:02AM", "Gameweek": 1}, {"Player": "Ryan Christie", "Team": "BOU", "Position": "M", "Type": "Drop", "Team.1": "Virgile", "Date (PDT)": "Sun Aug 4, 2024, 3:22AM", "Gameweek": 1}, {"Player": "Max Kilman", "Team": "WHU", "Position": "D", "Type": "Drop", "Team.1": "Tiki Tak", "Date (PDT)": "Sat Aug 3, 2024, 5:07PM", "Gameweek": 1}, {"Player": "Ross Barkley", "Team": "AVL", "Position": "M", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Sat Aug 3, 2024, 6:14AM", "Gameweek": 1}, {"Player": "Marcus Tavernier", "Team": "BOU", "Position": "M", "Type": "Drop", "Team.1": "Rocksolid FC", "Date (PDT)": "Sat Aug 3, 2024, 6:12AM", "Gameweek": 1}, {"Player": "Harvey Elliott", "Team": "LIV", "Position": "M", "Type": "Drop", "Team.1": "JP", "Date (PDT)": "Fri Aug 2, 2024, 8:55PM", "Gameweek": 1}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="notebooks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Content with notebooks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../docs/current-members.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Current Members</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tinashe C.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
