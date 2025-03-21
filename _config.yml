@@ -3,7 +3,7 @@
 
 title: Super Strikers Fantasy Football
 author: Tinashe C.
-logo: https://www.vecteezy.com/png/13366674-foot-ball-or-soccer-ball-icon-symbol-for-art-illustration-logo-website-apps-pictogram-news-infographic-or-graphic-design-element-format-png
+logo: images/logo.jpeg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
